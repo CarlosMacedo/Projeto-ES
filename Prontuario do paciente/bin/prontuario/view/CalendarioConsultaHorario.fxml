@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="prontuario.controller.CalendarioConsultaHorarioController">
+   <top>
+      <Label text="Editando horário de atendimento" BorderPane.alignment="CENTER_LEFT">
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </Label>
+   </top>
+   <bottom>
+      <ToolBar nodeOrientation="RIGHT_TO_LEFT" prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <items>
+          <Button mnemonicParsing="false" onAction="#removerHorario" text="Remover Horário" />
+            <Button mnemonicParsing="false" onAction="#fechar" text="Fechar" />
+        </items>
+      </ToolBar>
+   </bottom>
+   <center>
+      <TableView fx:id="tbHorarios" prefHeight="423.0" prefWidth="336.0" BorderPane.alignment="CENTER">
+        <columns>
+            <TableColumn fx:id="clData" prefWidth="75.0" text="Data" />
+          <TableColumn fx:id="clHorarioDisponiveis" prefWidth="75.0" text="Hora Inicio" />
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+         <BorderPane.margin>
+            <Insets bottom="15.0" left="5.0" right="25.0" top="15.0" />
+         </BorderPane.margin>
+      </TableView>
+   </center>
+   <left>
+      <VBox alignment="CENTER_RIGHT" nodeOrientation="RIGHT_TO_LEFT" prefHeight="433.0" prefWidth="231.0" spacing="5.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Data" />
+            <DatePicker fx:id="dpDataEscolhida">
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </DatePicker>
+            <Label text="Horário de inicio" />
+            <ChoiceBox fx:id="cbHorarioInicio" prefWidth="150.0" />
+            <Button mnemonicParsing="false" onAction="#adicionarData" text="Adicionar +" />
+         </children>
+         <BorderPane.margin>
+            <Insets left="50.0" />
+         </BorderPane.margin>
+      </VBox>
+   </left>
+</BorderPane>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="prontuario.controller.ExcluirConvenioController">
+   <center>
+      <TableView fx:id="tbConvenios" prefHeight="200.0" prefWidth="200.0" tableMenuButtonVisible="true" BorderPane.alignment="CENTER">
+        <columns>
+          <TableColumn fx:id="clCnpj" prefWidth="75.0" text="CNPJ" />
+          <TableColumn fx:id="clRazaoSocial" prefWidth="75.0" text="Razão Social" />
+            <TableColumn fx:id="clNome" prefWidth="75.0" text="Nome" />
+            <TableColumn fx:id="clRegistroAns" prefWidth="75.0" text="Registro ANS" />
+            <TableColumn fx:id="clUrl" prefWidth="75.0" text="URL" />
+            <TableColumn fx:id="clCodigoPrestador" prefWidth="75.0" text="Código Prestador" />
+            <TableColumn fx:id="clQntDiasRetorno" prefWidth="75.0" text="Quantidade de Dias Retorno" />
+            <TableColumn fx:id="clDataFaturamento" prefWidth="75.0" text="Data do Faturamento" />
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+   </center>
+   <bottom>
+      <ToolBar nodeOrientation="RIGHT_TO_LEFT" prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <items>
+          <Button mnemonicParsing="false" onAction="#remover" text="Remover" />
+            <Button disable="true" mnemonicParsing="false" onAction="#editar" text="Editar" />
+            <Button mnemonicParsing="false" onAction="#cancelar" text="Fechar" />
+        </items>
+      </ToolBar>
+   </bottom>
+</BorderPane>

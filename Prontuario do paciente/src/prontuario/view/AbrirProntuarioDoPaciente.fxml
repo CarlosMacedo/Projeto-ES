@@ -1,0 +1,481 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="prontuario.controller.AbrirProntuarioDoPacienteController">
+   <top>
+      <HBox fx:id="hbPesquisa" prefHeight="35.0" prefWidth="590.0" BorderPane.alignment="CENTER">
+         <children>
+            <TextField fx:id="txPesquisarProntuario" promptText="Pesquisar Prontuário" HBox.hgrow="ALWAYS" />
+            <Button fx:id="btPesquisarProntuario" mnemonicParsing="false" onAction="#pesquisarProntuario" text="Pesquisar" HBox.hgrow="ALWAYS" />
+         </children>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+         <BorderPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </BorderPane.margin>
+      </HBox>
+   </top>
+   <center>
+      <Accordion BorderPane.alignment="CENTER">
+        <panes>
+          <TitledPane animated="false" text="Identificação">
+               <content>
+                  <ScrollPane prefHeight="200.0" prefWidth="200.0">
+                     <content>
+                        <GridPane prefHeight="100.0" prefWidth="590.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <padding>
+                              <Insets left="30.0" right="30.0" top="10.0" />
+                           </padding>
+                           <children>
+                              <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0">
+                                 <children>
+                                    <Label text="Nome:" />
+                                    <Label fx:id="lbNome" text="Label" />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0" GridPane.rowIndex="1">
+                                 <children>
+                                    <Label text="CPF:" />
+                                    <Label fx:id="lbCpf" text="Label" />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0" GridPane.rowIndex="2">
+                                 <children>
+                                    <Label text="RG:" />
+                                    <Label fx:id="lbRg" text="Label" />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0" GridPane.rowIndex="3">
+                                 <children>
+                                    <Label text="Email:" />
+                                    <Label fx:id="lbEmail" text="Label" />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0" GridPane.columnIndex="1">
+                                 <children>
+                                    <Label text="Sexo:" />
+                                    <Label fx:id="lbSexo" text="Label" />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <children>
+                                    <Label text="Data De Nascimento:" />
+                                    <Label fx:id="lbDataDeNascimento" text="Label" />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                 <children>
+                                    <Label text="Convênio:" />
+                                    <Label fx:id="lbConvenio" text="Label" />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                 <children>
+                                    <Label text="Telefone:" />
+                                    <Label fx:id="lbTelefone" text="Label" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </GridPane>
+                     </content>
+                  </ScrollPane>
+               </content>
+          </TitledPane>
+          <TitledPane animated="false" text="Endereço">
+               <content>
+                  <ScrollPane prefHeight="200.0" prefWidth="200.0">
+                     <content>
+                        <GridPane prefWidth="590.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0">
+                                 <children>
+                                    <Label text="Rua:" />
+                                    <Label fx:id="lbRua" text="Label" />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0" GridPane.columnIndex="1">
+                                 <children>
+                                    <Label text="Bairro:" />
+                                    <Label fx:id="lbBairro" text="Label" />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0" GridPane.rowIndex="1">
+                                 <children>
+                                    <Label text="Cidade:" />
+                                    <Label fx:id="lbCidade" text="Label" />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <children>
+                                    <Label text="UF:" />
+                                    <Label fx:id="lbUf" text="Label" />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0" GridPane.rowIndex="2">
+                                 <children>
+                                    <Label text="Complemento:" />
+                                    <Label fx:id="lbComplemento" text="Label" />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                 <children>
+                                    <Label text="Número:" />
+                                    <Label fx:id="lbNumero" text="Label" />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0" GridPane.rowIndex="3">
+                                 <children>
+                                    <Label text="CEP:" />
+                                    <Label fx:id="lbCep" text="Label" />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                           </children>
+                           <padding>
+                              <Insets left="30.0" right="30.0" top="10.0" />
+                           </padding>
+                        </GridPane>
+                     </content>
+                  </ScrollPane>
+               </content>
+          </TitledPane>
+          <TitledPane animated="false" text="Considerações e Queixas">
+               <content>
+                  <TableView fx:id="tbQueixas" prefHeight="200.0" prefWidth="200.0">
+                    <columns>
+                      <TableColumn fx:id="clDataQueixa" prefWidth="75.0" text="Data" />
+                        <TableColumn fx:id="clMotivoQueixa" prefWidth="75.0" text="Motivo" />
+                      <TableColumn fx:id="clQueixa" prefWidth="75.0" text="Queixa" />
+                    </columns>
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                  </TableView>
+               </content>
+          </TitledPane>
+            <TitledPane animated="false" disable="true" text="Formulário de Identificação">
+               <content>
+                  <ScrollPane prefHeight="200.0" prefWidth="200.0">
+                     <content>
+                        <GridPane hgap="5.0" prefWidth="590.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0">
+                                 <children>
+                                    <Label text="Número de Registro:" />
+                                    <Label fx:id="lbNumRegistro" text="Label" />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0" GridPane.rowIndex="1">
+                                 <children>
+                                    <Label text="Local de Nascimento:" />
+                                    <Label fx:id="lbLocalDeNascimento" text="Label" />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0" GridPane.rowIndex="2">
+                                 <children>
+                                    <Label text="Nome da mãe:" />
+                                    <Label fx:id="lbNomeDaMae" text="Label" />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0" GridPane.rowIndex="3">
+                                 <children>
+                                    <Label text="Nome do pai:" />
+                                    <Label fx:id="lbNomeDoPai" text="Label" />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0" GridPane.columnIndex="1">
+                                 <children>
+                                    <Label text="Profissão:" />
+                                    <Label fx:id="lbProfissao" text="Label" />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <children>
+                                    <Label text="Estado civil:" />
+                                    <Label fx:id="lbEstadoCivil" text="Label" />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                 <children>
+                                    <Label text="Nome do Conjuge:" />
+                                    <Label fx:id="lbNomeDoConjuge" text="Label" />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                           </children>
+                           <padding>
+                              <Insets left="30.0" right="30.0" top="10.0" />
+                           </padding>
+                        </GridPane>
+                     </content>
+                  </ScrollPane>
+               </content>
+            </TitledPane>
+            <TitledPane animated="false" disable="true" text="Formulário de Internação">
+               <content>
+                  <ScrollPane prefHeight="200.0" prefWidth="200.0">
+                     <content>
+                        <GridPane hgap="5.0" prefWidth="590.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <padding>
+                              <Insets left="30.0" right="30.0" top="10.0" />
+                           </padding>
+                           <children>
+                              <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0">
+                                 <children>
+                                    <Label text="Nome da Clinica" />
+                                    <TextField fx:id="txNomeDaClinica" />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0" GridPane.rowIndex="1">
+                                 <children>
+                                    <Label text="Diagnostico Próvisório" />
+                                    <TextField fx:id="txDiagnosticoProvisorio" />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0" GridPane.columnIndex="1">
+                                 <children>
+                                    <Label text="Data da Internação" />
+                                    <DatePicker fx:id="dpDataDaInternacao" />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <children>
+                                    <Label text="Medico Responsavel" />
+                                    <ChoiceBox fx:id="cbMedicoResponsavel" prefWidth="150.0" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </GridPane>
+                     </content>
+                  </ScrollPane>
+               </content>
+            </TitledPane>
+            <TitledPane animated="false" disable="true" text="Formulário de Anamnese">
+               <content>
+                  <ScrollPane prefHeight="200.0" prefWidth="200.0">
+                     <content>
+                        <GridPane hgap="5.0" prefWidth="590.0" vgap="5.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0">
+                                 <children>
+                                    <Label text="Informante" />
+                                    <TextField fx:id="txAnamneseInformante" />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0" GridPane.columnIndex="1">
+                                 <children>
+                                    <Label text="Historia da doença atual" />
+                                    <TextField fx:id="txAnamneseDoencaAtual" />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0" GridPane.rowIndex="1">
+                                 <children>
+                                    <Label text="Queixa principal" />
+                                    <TextField fx:id="txAnamneseQueixaPrincipal" />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <children>
+                                    <Label text="Interrogatório" />
+                                    <TextField fx:id="txAnamneseinterrogatorio" />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                 <children>
+                                    <Label text="Sistema Cardiovascular" />
+                                    <TextField fx:id="txAnamneseSistemaCardiovascular" />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0" GridPane.rowIndex="3">
+                                 <children>
+                                    <Label text="Aparelho Geniturinário" />
+                                    <TextField fx:id="txAnamneseAparelhoGeniturinario" />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                 <children>
+                                    <Label text="Sistema Tegumentar" />
+                                    <TextField fx:id="txAnamneseSistemaTegumentar" />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0" GridPane.rowIndex="2">
+                                 <children>
+                                    <Label text="Sistema Digestório" />
+                                    <TextField fx:id="txAnamneseSistemaDigestorio" />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                 <children>
+                                    <Label text="Sistema Muscular esquelético" />
+                                    <TextField fx:id="txAnamneseSistemaMuscularEsquel" />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0" GridPane.rowIndex="4">
+                                 <children>
+                                    <Label text="Sistema Nervoso" />
+                                    <TextField fx:id="txAnamneseSistemaNervoso" />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                 <children>
+                                    <Label text="Aparelho Visual" />
+                                    <TextField fx:id="txAnamneseAparelhoVisu" />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0" GridPane.rowIndex="5">
+                                 <children>
+                                    <Label fx:id="txAnamneseSistArt" text="Sistema Articular" />
+                                    <TextField fx:id="txAnamneseSistArticular" />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                                 <children>
+                                    <Label fx:id="txAnamneseAparAuditiv" text="Aparelho auditivo" />
+                                    <TextField />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0" GridPane.rowIndex="6">
+                                 <children>
+                                    <Label fx:id="txAnamneseTratAnter" text="Tratamento anterior" />
+                                    <TextField />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                                 <children>
+                                    <Label fx:id="txAnamneseTratPers" text="Tratamento Pessoal" />
+                                    <TextField />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0" GridPane.rowIndex="7">
+                                 <children>
+                                    <Label fx:id="txAnamneseAntecedentPesso" text="Antecedentes Pessoais" />
+                                    <TextField />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0" GridPane.rowIndex="8">
+                                 <children>
+                                    <Label fx:id="txAnamneseAntecendFami" text="Antecedentes Familiares" />
+                                    <TextField />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="8">
+                                 <children>
+                                    <Label fx:id="txAnamneseTabagismo" text="Tabagismo" />
+                                    <TextField />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </GridPane>
+                     </content>
+                  </ScrollPane>
+               </content>
+            </TitledPane>
+            <TitledPane animated="false" disable="true" text="Formulário de Exame Físico">
+               <content>
+                  <ScrollPane prefHeight="200.0" prefWidth="200.0" />
+               </content>
+            </TitledPane>
+            <TitledPane animated="false" disable="true" text="Evolução da Doença">
+               <content>
+                  <TableView fx:id="tbEvolucoDaDoenca" prefHeight="200.0" prefWidth="200.0">
+                    <columns>
+                      <TableColumn fx:id="clNomeDoenca" prefWidth="75.0" text="Nome" />
+                      <TableColumn fx:id="clEvolucaoDoenca" prefWidth="75.0" text="Evolução" />
+                    </columns>
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                  </TableView>
+               </content>
+            </TitledPane>
+            <TitledPane animated="false" disable="true" text="Boletim de Alta">
+               <content>
+                  <TableView fx:id="tbBoletimDeAlta" prefHeight="200.0" prefWidth="200.0" tableMenuButtonVisible="true">
+                    <columns>
+                      <TableColumn fx:id="clDataDeAlta" prefWidth="75.0" text="Data" />
+                      <TableColumn fx:id="clDiagnostico" prefWidth="75.0" text="Diagnostico" />
+                        <TableColumn fx:id="clProcedimentosRealizados" prefWidth="75.0" text="Procedimentos Realizados" />
+                        <TableColumn fx:id="clCondicoesDoPaciente" prefWidth="75.0" text="Condição do Paciente" />
+                        <TableColumn fx:id="clExameRealizado" prefWidth="75.0" text="Exame Realizado" />
+                        <TableColumn fx:id="clMedicamentoPrincipal" prefWidth="75.0" text="Medicamentos Principais" />
+                    </columns>
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                  </TableView>
+               </content>
+            </TitledPane>
+        </panes>
+      </Accordion>
+   </center>
+   <bottom>
+      <ToolBar nodeOrientation="RIGHT_TO_LEFT" prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER_RIGHT">
+        <items>
+            <Button fx:id="btSalvar" mnemonicParsing="false" onAction="#salvarinformacoes" text="Salvar" />
+          <Button mnemonicParsing="false" onAction="#fechar" text="Fechar" />
+        </items>
+      </ToolBar>
+   </bottom>
+</BorderPane>

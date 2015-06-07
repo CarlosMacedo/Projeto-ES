@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="prontuario.controller.ProntuarioDoPacienteController">
+   <left>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #C0D9D9;" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="btAlertasLembretes" layoutX="5.0" layoutY="331.0" mnemonicParsing="false" onAction="#alertasLembretes" prefHeight="35.0" prefWidth="180.0" text="Alertas e Lembretes" visible="false" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="48.0">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </Button>
+            <MenuButton fx:id="btCadastrar" layoutX="5.0" layoutY="48.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="180.0" text="Cadastro" visible="false" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="48.0">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#cadastrarMedico" text="Cadastrar Médico" />
+                  <MenuItem mnemonicParsing="false" onAction="#cadastrarPaciente" text="Cadastrar Paciente" />
+                <MenuItem mnemonicParsing="false" onAction="#cadastrarConvenio" text="Cadastrar Convênio" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" onAction="#editarOuExcluirMedico" text="Editar ou Excluir Médico" />
+                  <MenuItem mnemonicParsing="false" onAction="#editarOuExcluirPaciente" text="Editar ou Excluir Paciente" />
+                  <MenuItem mnemonicParsing="false" onAction="#editarOuExcluirConvenio" text="Editar ou Excluir Convênio" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+              </items>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </MenuButton>
+            <Button fx:id="btDadosEstatisticos" layoutX="5.0" layoutY="14.0" mnemonicParsing="false" onAction="#dadosEstatisticos" prefHeight="35.0" prefWidth="180.0" text="Dados Estatísticos" visible="false" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </Button>
+            <Button fx:id="btEditarConta" layoutX="5.0" layoutY="91.0" mnemonicParsing="false" onAction="#editarConta" prefHeight="35.0" prefWidth="180.0" text="Editar Conta" visible="false" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="91.0">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </Button>
+            <Button fx:id="btVisualizarProprioProntuario" layoutX="5.0" layoutY="133.0" mnemonicParsing="false" onAction="#visualizarProprioProntuario" prefHeight="35.0" prefWidth="180.0" text="Visualizar Prontuário" visible="false" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </Button>
+            <Button fx:id="btConsideracoesEQueixas" layoutX="5.0" layoutY="175.0" mnemonicParsing="false" onAction="#consideracoesEQueixas" prefHeight="35.0" prefWidth="180.0" text="Considerações e Queixas" visible="false" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </Button>
+            <Button fx:id="btPesquisarProntuario" layoutX="5.0" layoutY="175.0" mnemonicParsing="false" onAction="#pesquisarProntuario" prefHeight="35.0" prefWidth="180.0" text="Pesquisar Prontuário" visible="false" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </Button>
+            <MenuButton fx:id="btConsultas" layoutX="5.0" layoutY="47.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="180.0" text="Consultas" visible="false" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#agendarConsultas" text="Agendar" />
+                  <MenuItem mnemonicParsing="false" onAction="#desmarcarConsultas" text="Desmarcar" />
+               </items>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </MenuButton>
+            <MenuButton fx:id="btCalendarioDeConsultas" layoutX="5.0" layoutY="133.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="180.0" text="Calendário de Consultas" visible="false" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#visualizarCalendarioDeConsultas" text="Visualizar" />
+                  <MenuItem mnemonicParsing="false" onAction="#addHorarioDisponivel" text="Horários Disponiveis" />
+               </items>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </MenuButton>
+         </children>
+      </AnchorPane>
+   </left>
+   <top>
+      <MenuBar nodeOrientation="RIGHT_TO_LEFT">
+        <menus>
+          <Menu mnemonicParsing="false" text="Ajuda">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#comoComecar" text="Como começar" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Configurações">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#deslogar" text="Deslogar" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+</BorderPane>
